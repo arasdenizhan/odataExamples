@@ -1,0 +1,15 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  odata-training-db:
+    image: postgres
+    platform: linux/amd64
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: denzhn
+      POSTGRES_PASSWORD: 123456
+    volumes:
+      - odatapostgrevolume:/var/lib/postgresql/data
+volumes:
+  odatapostgrevolume: {}
