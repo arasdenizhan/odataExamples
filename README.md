@@ -4,6 +4,6 @@
 
 ## Custom Edm Provider için metadata linki:
 http://localhost:8080/custom-provider/$metadata
-###Jpa entityleri için metadata linki:
+## Jpa entityleri için metadata linki:
 http://localhost:8080/odata/$metadata
 
