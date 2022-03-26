@@ -6,4 +6,6 @@
 http://localhost:8080/custom-provider/$metadata
 ## Jpa entityleri için metadata linki:
 http://localhost:8080/odata/$metadata
+## Annotation entityleri için metadata linki:
+http://localhost:8080/odata/annotation/$metadata
 

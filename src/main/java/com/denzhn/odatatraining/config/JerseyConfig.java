@@ -1,5 +1,7 @@
 package com.denzhn.odatatraining.config;
 
+import com.denzhn.odatatraining.annotation.AnnotationLocator;
+import com.denzhn.odatatraining.annotation.AnnotationODataServiceFactory;
 import com.denzhn.odatatraining.filter.EntityManagerFilter;
 import com.denzhn.odatatraining.locator.DealerRootLocator;
 import com.denzhn.odatatraining.service.DealerODataJpaServiceFactory;
@@ -14,7 +16,10 @@ import javax.ws.rs.ApplicationPath;
 @Component
 @ApplicationPath("/odata")
 public class JerseyConfig extends ResourceConfig {
-    public JerseyConfig(DealerODataJpaServiceFactory serviceFactory, EntityManagerFactory emf) {
+    public JerseyConfig(DealerODataJpaServiceFactory serviceFactory,
+                        AnnotationODataServiceFactory annotationODataServiceFactory,
+                        EntityManagerFactory emf
+    ) {
         ODataApplication oDataApplication = new ODataApplication();
         oDataApplication.getClasses().forEach(appClass -> {
             if(!ODataRootLocator.class.isAssignableFrom(appClass)){
@@ -23,5 +28,6 @@ public class JerseyConfig extends ResourceConfig {
         });
         register(new EntityManagerFilter(emf));
         register(new DealerRootLocator(serviceFactory));
+        register(new AnnotationLocator(annotationODataServiceFactory));
     }
 }
