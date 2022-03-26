@@ -1,5 +1,6 @@
 package com.denzhn.odatatraining.config;
 
+import com.denzhn.odatatraining.filter.EntityManagerFilter;
 import com.denzhn.odatatraining.locator.DealerRootLocator;
 import com.denzhn.odatatraining.service.DealerODataJpaServiceFactory;
 import org.apache.olingo.odata2.core.rest.ODataRootLocator;
@@ -20,7 +21,7 @@ public class JerseyConfig extends ResourceConfig {
                 register(appClass);
             }
         });
-        /*register(new EntityManagerFilter(emf));*/
+        register(new EntityManagerFilter(emf));
         register(new DealerRootLocator(serviceFactory));
     }
 }
