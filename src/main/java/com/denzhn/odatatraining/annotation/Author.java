@@ -9,7 +9,7 @@ import java.util.List;
 public class Author {
     @EdmKey
     private Long id;
-    @EdmProperty
+    @EdmProperty(facets = @EdmFacets(nullable = false, maxLength = 20))
     private String name;
     @EdmProperty
     private Integer age;
