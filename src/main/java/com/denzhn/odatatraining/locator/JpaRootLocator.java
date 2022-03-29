@@ -10,6 +10,7 @@ import javax.inject.Singleton;
 import javax.ws.rs.Path;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.core.UriInfo;
 import java.io.IOException;
 
 @Slf4j
@@ -30,6 +31,9 @@ public class JpaRootLocator extends ODataRootLocator implements ContainerRequest
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
+        UriInfo uriInfo = requestContext.getUriInfo();
         log.info("Request method: " + requestContext.getRequest().getMethod());
+        log.info("Request raw path: " + uriInfo.getAbsolutePath().getRawPath());
+        log.info("Request query: " + uriInfo.getRequestUri().getQuery());
     }
 }
