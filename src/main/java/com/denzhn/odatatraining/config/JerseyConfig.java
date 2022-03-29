@@ -3,7 +3,7 @@ package com.denzhn.odatatraining.config;
 import com.denzhn.odatatraining.annotation.AnnotationLocator;
 import com.denzhn.odatatraining.annotation.AnnotationODataServiceFactory;
 import com.denzhn.odatatraining.filter.EntityManagerFilter;
-import com.denzhn.odatatraining.locator.DealerRootLocator;
+import com.denzhn.odatatraining.locator.JpaRootLocator;
 import com.denzhn.odatatraining.service.DealerODataJpaServiceFactory;
 import org.apache.olingo.odata2.core.rest.ODataRootLocator;
 import org.apache.olingo.odata2.core.rest.app.ODataApplication;
@@ -27,7 +27,7 @@ public class JerseyConfig extends ResourceConfig {
             }
         });
         register(new EntityManagerFilter(emf));
-        register(new DealerRootLocator(serviceFactory));
+        register(new JpaRootLocator(serviceFactory));
         register(new AnnotationLocator(annotationODataServiceFactory));
     }
 }

@@ -15,11 +15,11 @@ import java.io.IOException;
 @Slf4j
 @Path("/")
 @Singleton
-public class DealerRootLocator extends ODataRootLocator implements ContainerRequestFilter {
+public class JpaRootLocator extends ODataRootLocator implements ContainerRequestFilter {
     private final DealerODataJpaServiceFactory serviceFactory;
 
     @Autowired
-    public DealerRootLocator(DealerODataJpaServiceFactory serviceFactory) {
+    public JpaRootLocator(DealerODataJpaServiceFactory serviceFactory) {
         this.serviceFactory = serviceFactory;
     }
 
