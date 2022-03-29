@@ -1,11 +1,11 @@
-## Uygulamayı ayağa kaldırmak için:
-- Proje root dizininde `docker-compose up` komutu çalıştırılır.
-- > M1 kullanılmıyorsa docker-compose.yml'da platform belirtmeye gerek yok.
+## To run application:
+- Run `docker-compose up` command on project root directory.
+- > If you don't use M1 Apple Silicon you don't have to specify "platform" inside of docker-compose.yml.
 
-## Custom Edm Provider için metadata linki:
+## Metadata link for Custom Edm Provider:
 http://localhost:8080/custom-provider/$metadata
-## Jpa entityleri için metadata linki:
+## Metadata link for Jpa entities:
 http://localhost:8080/odata/$metadata
-## Annotation entityleri için metadata linki:
+## Metadata link for Annotation entities:
 http://localhost:8080/odata/annotation/$metadata
 
